@@ -15,6 +15,9 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'asdfghjkl123456789&%',
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+              ]
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -52,7 +55,7 @@ $config = [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'mahasiswa',
                     'pluralize' => false,
-                    'tokens' => ['{id}' => '<id:.+>']
+                    'tokens' => ['{id}' => '<id:.+>']    
                 ]
             ],
         ],
