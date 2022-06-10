@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use yii\rest\ActiveController;
 use yii\filters\auth\HttpBasicAuth;
-// use app\Models\User;
+use app\Models\User;
 
 class MahasiswaController extends ActiveController{
 
@@ -17,10 +17,6 @@ class MahasiswaController extends ActiveController{
             'class' => HttpBasicAuth::className(),
             //definisikan fungsi yg akan dipakai untuk otentikasi
             'auth' => function ($username, $password) {
-                // $user = User::find()->where(['username' => $username])->one();
-                // if ($user && $user->validatePassword($password)) {
-                //     return $user;
-                // }
                 $user = User::findByUsername($username);
                 if(!is_null($user)){
                     if ($user->validatePassword($password)) {
