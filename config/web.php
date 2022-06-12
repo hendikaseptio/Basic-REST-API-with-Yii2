@@ -53,7 +53,13 @@ $config = [
             'rules' => [
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => 'mahasiswa',
+                    'controller' => 'penerbit',
+                    'pluralize' => false,
+                    'tokens' => ['{id}' => '<id:.+>']    
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'buku',
                     'pluralize' => false,
                     'tokens' => ['{id}' => '<id:.+>']    
                 ]
